@@ -2,12 +2,16 @@ import styles from "./Navbar.module.css";
 
 import { NavLink } from "react-router-dom";
 
-import { useAuthentication } from "../hooks/useAuthentication";
+// import { useAuthentication } from "../hooks/useAuthentication";
+import { useSignOut } from "../hooks/useSignOut";
 import { useAuthValue } from "../context/AuthContext";
 
 const Navbar = () => {
   // Pega o usuário passado pelo contexto p/ exibir coisas caso esteja logado
   const { user } = useAuthValue();
+
+  // Função de logout
+  const { logout } = useSignOut();
 
   return (
     <nav className={styles.navbar}>
@@ -79,7 +83,7 @@ const Navbar = () => {
         )}
         {user && (
           <li>
-            <button>Sair</button>
+            <button onClick={logout}>Sair</button>
           </li>
         )}
       </ul>
