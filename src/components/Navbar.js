@@ -77,6 +77,11 @@ const Navbar = () => {
             </li>
           </>
         )}
+        {user && (
+          <li>
+            <button>Sair</button>
+          </li>
+        )}
       </ul>
     </nav>
   );
