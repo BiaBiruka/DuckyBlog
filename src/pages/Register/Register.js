@@ -1,3 +1,5 @@
+import { useAuthentication } from "../../hooks/useAuthentication";
+
 import styles from "./Register.module.css";
 
 import { useState, useEffect } from "react";
@@ -9,7 +11,10 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  // Importa os dados/funções do hook criado
+  const { createUser, error: authError, loading } = useAuthentication();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Se o formulário envia, define erro como nada
     setError("");
@@ -26,8 +31,18 @@ const Register = () => {
       return;
     }
 
-    console.log(user);
+    const res = await createUser(user);
+    console.log(res);
   };
+
+  // Verifica se o erro mudou
+  // O erro que vem do hook de autenticação chama authError p/ não confundir com o erro do register (senha diferente)
+  useEffect(() => {
+    // Se há um erro (não está null), exibe o erro da mesma forma que o erro padrão (senhas diferentes)
+    if (authError) {
+      setError(authError);
+    }
+  }, [authError]);
 
   return (
     <div className={styles.register}>
@@ -78,7 +93,12 @@ const Register = () => {
             required
           />
         </label>
-        <button className="btn">Cadastrar</button>
+        {!loading && <button className="btn">Cadastrar</button>}
+        {loading && (
+          <button className="btn" disabled>
+            Aguarde...
+          </button>
+        )}
         {/* Se tiver erro, exibe abaixo do botão */}
         {error && <p className="error">{error}</p>}
       </form>
