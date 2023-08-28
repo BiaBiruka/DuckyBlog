@@ -15,6 +15,7 @@ import Register from "./pages/Register/Register";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import NotFound from "./pages/NotFound/NotFound";
+import Search from "./pages/Search/Search";
 
 // Components
 import Navbar from "./components/Navbar";
@@ -56,6 +57,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="/sobre" element={<About />}></Route>
+              <Route path="/pesquisa" element={<Search />}></Route>
               {/* Se tem (ou não) usuário logado, manda pra página X, se não manda pra Y*/}
               <Route
                 path="/login"
