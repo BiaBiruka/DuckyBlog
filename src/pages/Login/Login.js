@@ -35,6 +35,7 @@ const Login = () => {
       setError(authError);
     }
   }, [authError]);
+
   return (
     <div className={styles.login}>
       <h1>Fazer login</h1>

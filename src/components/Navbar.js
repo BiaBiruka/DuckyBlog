@@ -2,16 +2,15 @@ import styles from "./Navbar.module.css";
 
 import { NavLink } from "react-router-dom";
 
-// import { useAuthentication } from "../hooks/useAuthentication";
-import { useSignOut } from "../hooks/useSignOut";
 import { useAuthValue } from "../context/AuthContext";
+import { useAuthentication } from "../hooks/useAuthentication";
 
 const Navbar = () => {
   // Pega o usuário passado pelo contexto p/ exibir coisas caso esteja logado
   const { user } = useAuthValue();
 
   // Função de logout
-  const { logout } = useSignOut();
+  const { logout } = useAuthentication();
 
   return (
     <nav className={styles.navbar}>
@@ -27,7 +26,7 @@ const Navbar = () => {
         <li>
           <NavLink
             to="/"
-            className={({ isActive }) => isActive && styles.active}
+            className={({ isActive }) => (isActive ? styles.active : "")}
           >
             Menu
           </NavLink>
@@ -37,7 +36,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/postagens/novo"
-                className={({ isActive }) => isActive && styles.active}
+                className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 Nova postagem
               </NavLink>
@@ -46,7 +45,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/dashboard"
-                className={({ isActive }) => isActive && styles.active}
+                className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 Painel
               </NavLink>
@@ -56,7 +55,7 @@ const Navbar = () => {
         <li>
           <NavLink
             to="/sobre"
-            className={({ isActive }) => isActive && styles.active}
+            className={({ isActive }) => (isActive ? styles.active : "")}
           >
             Sobre
           </NavLink>
@@ -66,7 +65,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/cadastro"
-                className={({ isActive }) => isActive && styles.active}
+                className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 Cadastro
               </NavLink>
@@ -74,7 +73,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/login"
-                className={({ isActive }) => isActive && styles.active}
+                className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 Login
               </NavLink>
