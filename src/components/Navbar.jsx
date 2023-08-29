@@ -44,7 +44,7 @@ const Navbar = () => {
 
             <li>
               <NavLink
-                to="/dashboard"
+                to="/painel"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 Painel
