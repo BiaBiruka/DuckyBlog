@@ -6,7 +6,6 @@ import {
   orderBy,
   onSnapshot,
   where,
-  QuerySnapshot,
 } from "firebase/firestore";
 
 export const useFetchDocuments = (docCollection, search = null, uid = null) => {
@@ -32,7 +31,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
           // Busca de acordo com a tag escrita no campo de pesquisa
           q = await query(
             collectionRef,
-            where("tags", "array-contains", search),
+            where("tagsArray", "array-contains", search),
             orderBy("createdAt", "desc")
           );
         } else {
@@ -58,7 +57,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
       }
     };
     loadData();
-  }, [docCollection, search, uid, cancelled]); //Se chegar um deles já pode buscar dados
+  }, [docCollection, documents, search, uid, cancelled]); //Se chegar um deles já pode buscar dados
 
   useEffect(() => {
     return () => setCancelled(true);
