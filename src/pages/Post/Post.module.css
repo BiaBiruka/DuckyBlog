@@ -1,0 +1,21 @@
+.post_container {
+  position: relative;
+  top: 5rem;
+  text-align: center;
+}
+
+.post_container img {
+  max-width: 70%;
+}
+
+.tags {
+  display: flex;
+  justify-content: center;
+}
+
+.tags span {
+  margin-left: 0.4rem;
+  font-size: 1.2em;
+  color: #4d1c92;
+  font-weight: 400;
+}
