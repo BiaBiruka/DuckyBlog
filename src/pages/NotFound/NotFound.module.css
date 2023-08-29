@@ -1,0 +1,19 @@
+.not_found {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 10em;
+  opacity: 0.7;
+  display: flex;
+  flex-direction: row;
+}
+
+.not_found img {
+  margin-right: 1em;
+}
+
+.not_found a {
+  font-weight: 600;
+  text-decoration: underline;
+}

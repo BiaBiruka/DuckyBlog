@@ -16,6 +16,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import NotFound from "./pages/NotFound/NotFound";
 import Search from "./pages/Search/Search";
+import Post from "./pages/Post/Post";
 
 // Components
 import Navbar from "./components/Navbar";
@@ -58,6 +59,7 @@ function App() {
               <Route path="/" element={<Home />}></Route>
               <Route path="/sobre" element={<About />}></Route>
               <Route path="/pesquisa" element={<Search />}></Route>
+              <Route path={"/postagens/:id"} element={<Post />}></Route>
               {/* Se tem (ou não) usuário logado, manda pra página X, se não manda pra Y*/}
               <Route
                 path="/login"
@@ -68,7 +70,7 @@ function App() {
                 element={!user ? <Register /> : <Navigate to="/" />}
               ></Route>
               <Route
-                path="/dashboard"
+                path="/painel"
                 element={user ? <Dashboard /> : <Navigate to="/login" />}
               ></Route>
               <Route
