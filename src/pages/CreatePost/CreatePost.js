@@ -12,7 +12,7 @@ const CreatePost = () => {
   const [tags, setTags] = useState([]);
   const [formError, setFormError] = useState("");
 
-  const user = useAuthValue();
+  const { user } = useAuthValue();
 
   const { insertDocument, response } = useInsertDocument("posts");
   const navigate = useNavigate();
@@ -49,8 +49,8 @@ const CreatePost = () => {
       image,
       content,
       tagsArray,
-      uid: user.user.uid,
-      createdBy: user.user.displayName,
+      uid: user.uid,
+      createdBy: user.displayName,
     });
 
     // Redirect para o menu

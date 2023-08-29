@@ -1,5 +1,7 @@
 .create_post {
   text-align: center;
+  position: relative;
+  top: 5rem;
 }
 
 .create_post h2 {
