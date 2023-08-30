@@ -112,15 +112,15 @@ textarea {
 }
 
 .btn.btn-outline:hover {
-  color: #0694ad;
-  background-color: transparent;
-  border: 1px solid #0694ad;
+  color: #fff;
+  background-color: #09b6d6;
+  border: 1px solid #09b6d6;
 }
 
 .btn.btn-danger:hover {
-  color: #b41d2c;
-  background-color: transparent;
-  border: 1px solid #b41d2c;
+  color: #fff;
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
 }
 
 button[disabled] {
