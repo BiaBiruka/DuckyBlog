@@ -79,6 +79,7 @@ textarea {
   padding: 10px 15px;
   font-size: 1em;
   transition: 0.4s;
+  font-family: "Montserrat", sans-serif;
 }
 
 .btn.btn-search {
@@ -98,6 +99,13 @@ textarea {
   padding: 7px 30px;
 }
 
+.btn.btn-danger {
+  background-color: transparent;
+  border-radius: 3px;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  padding: 7px 30px;
+}
 .btn:hover {
   background-color: #4d1c92;
   color: #fff;
@@ -110,7 +118,9 @@ textarea {
 }
 
 .btn.btn-danger:hover {
-  background-color: #dc3545;
+  color: #b41d2c;
+  background-color: transparent;
+  border: 1px solid #b41d2c;
 }
 
 button[disabled] {

@@ -12,6 +12,7 @@ nav img {
   align-items: center;
   padding: 0.5em 0.5em;
   background-color: #a6f5fc;
+  margin-right: 0.5em;
 
   /* Navbar fixada no topo */
   overflow: hidden;
@@ -42,10 +43,11 @@ nav img {
   display: flex;
   list-style: none;
   font-weight: 500;
+  align-items: center;
 }
 
 .links_list li {
-  margin-right: 0.7em;
+  margin: 0 0.7em;
 }
 
 .links_list li a {
@@ -55,6 +57,10 @@ nav img {
 
 .links_list li a:hover {
   color: #bbb;
+}
+
+.links_list button {
+  margin-right: 0.5em;
 }
 
 .active {
