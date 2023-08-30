@@ -1,6 +1,6 @@
 // Hook para salvar coisas no bd (usuários, postagens, etc)
 
-import { useState, useEffect, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { db } from "../firebase/config";
 
 // No firebase não tem tabelas, tem collections
