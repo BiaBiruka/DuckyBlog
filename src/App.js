@@ -17,6 +17,7 @@ import CreatePost from "./pages/CreatePost/CreatePost";
 import NotFound from "./pages/NotFound/NotFound";
 import Search from "./pages/Search/Search";
 import Post from "./pages/Post/Post";
+import EditPost from "./pages/EditPost/EditPost";
 
 // Components
 import Navbar from "./components/Navbar";
@@ -76,6 +77,10 @@ function App() {
               <Route
                 path="/postagens/novo"
                 element={user ? <CreatePost /> : <Navigate to="/login" />}
+              ></Route>
+              <Route
+                path="/postagens/editar/:id"
+                element={user ? <EditPost /> : <Navigate to="/login" />}
               ></Route>
               <Route path="*" element={<NotFound />}></Route>
             </Routes>
