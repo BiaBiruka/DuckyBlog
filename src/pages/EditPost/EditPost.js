@@ -1,7 +1,7 @@
 import styles from "./EditPost.module.css";
 
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
 import { useUpdateDocument } from "../../hooks/useUpdateDocument";
 import { useFetchDocument } from "../../hooks/useFetchDocument";
@@ -73,7 +73,6 @@ const EditPost = () => {
     // Redirect para o menu
     navigate("/painel");
   };
-
   return (
     <div className={styles.edit_post}>
       {post && (
@@ -138,6 +137,17 @@ const EditPost = () => {
             {formError && <p className="error">{formError}</p>}
           </form>
         </>
+      )}
+      {!post && !response.loading && (
+        <div className="not_found">
+          <img src="/ducky-notFound2.svg" alt="DuckyBlog not Found" />
+          <div>
+            <h1>Nenhuma postagem encontrada para esta URL</h1>
+            <p>
+              <Link to="/painel">Voltar para o painel</Link>
+            </p>
+          </div>
+        </div>
       )}
     </div>
   );

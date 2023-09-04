@@ -10,14 +10,3 @@
 .search_container h1 {
   margin-bottom: 1em;
 }
-
-.no_posts {
-  text-align: center;
-}
-.no_posts p {
-  margin-bottom: 1.5em;
-}
-
-.no_posts a {
-  padding: 10px 25px;
-}

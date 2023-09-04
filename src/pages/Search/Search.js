@@ -18,11 +18,16 @@ const Search = () => {
       </h1>
       <div>
         {posts && posts.length === 0 && (
-          <div className={styles.no_posts}>
-            <p>Nenhuma postagem encontrada para {search}</p>
-            <Link to="/" className="btn">
-              Voltar para o menu
-            </Link>
+          <div className="not_found">
+            <img src="/ducky-notFound2.svg" alt="DuckyBlog not Found" />
+            <div>
+              <h1>
+                Nenhuma postagem encontrada para <i>"{search}"</i>
+              </h1>
+              <p>
+                <Link to="/">Voltar para o menu</Link>
+              </p>
+            </div>
           </div>
         )}
         {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}

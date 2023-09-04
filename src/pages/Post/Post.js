@@ -9,10 +9,10 @@ const Post = () => {
   const { document: post, loading } = useFetchDocument("posts", id);
   const navigate = useNavigate();
 
-  const handleBack = (e) => {
-    e.preventDefault();
-    navigate(-1);
-  };
+  // const handleBack = (e) => {
+  //   e.preventDefault();
+  //   navigate(-1);
+  // };
   return (
     <div className={styles.post_container}>
       {loading && <p>Carregando dados...</p>}
@@ -31,7 +31,7 @@ const Post = () => {
         </>
       )}
       {!post && !loading && (
-        <div className={styles.not_found}>
+        <div className="not_found">
           <img src="/ducky-notFound2.svg" alt="DuckyBlog not Found" />
           <div>
             <h1>Nenhuma postagem encontrada para esta URL</h1>
